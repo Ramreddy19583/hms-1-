@@ -1,0 +1,177 @@
+<html>
+
+    
+    <head>
+        <title>hospital</title>
+        <link rel="stylesheet" href="reports.css">
+        <style>
+         h2 { color: #2a3f54; }
+    .section { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);margin-top: 30px;border-radius: 1rem;border: 2px solid black;}
+    label { display: block; margin: 5px 0; font-weight: bold; }
+    input, select, button { padding: 8px; margin: 5px 0; width: 100%;; border: 1px solid #ccc; border-radius: 5px; }
+    button { background: #2a9d8f; color: white; cursor: pointer; }
+    button:hover { background: #21867a; }
+    .bill-output, .pharmacy-output { margin-top: 10px; padding: 10px; background: #eef; border-radius: 5px; }
+    select{height: 10px;}
+    select[id="medicine"]{height: 30px;}
+       </style>
+  
+    </head>
+     
+    <body>
+        <div class="main">
+           <header>
+            <div class="menubar">
+                <ul>
+                    <li><a href="main page.html">Home</a></li>
+                    <li><a href="Appointment.html">Appointment</a></li>
+                                        <li><a href="Reports.html">Reports</a></li>
+
+                   <li><a href="billing.html">Billing</a></li>
+                     <li><a href="pharmacy.html">Pharmacy</a></li>
+                     <li><a href="contact.html">Contact</a></li>
+                   <li><a href="#">Login</a>
+                 <ul>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="patient login.html">Patient Login</a></li>
+                            <li><a href="admin login.html">Admin Login</a></li>
+                             <li><a href="doctor login.html">Doctor Login</a></li>
+                            <li><a href="staff login.html">Staff Login</a></li>
+                        </ul>
+                    </div></li>
+
+                </ul>
+            </div>
+           </header>
+             <hr  font-size="20px" color="black">
+
+             <section>
+                <!-- PHARMACY SECTION -->
+                 <div class="section">
+    <h2> Pharmacy Section</h2>
+    <label>Medicine:</label>
+    <select id="medicine">
+        <option value="">--Select--</option>
+            <option value="150">Acetaminophen (pain reliever, fever reducer)</option>
+            <option value="120">Albuterol (asthma inhaler)</option>
+
+            <option value="150">Aspirin (pain reliever, blood thinner)</option>
+            <option value="130">Azithromycin (antibiotic)</option>
+            <option value="140">Bacitracin (antibiotic ointment)</option>
+            <option value="160">Cefalexin (antibiotic)</option>
+            <option value="140">Diclofenac (pain reliever, NSAID)</option>
+        <option value="140">Epinephrine (allergic reactions)</option>
+            <option value="130">Fexofenadine (antihistamine)</option>
+            <option value="120">Guaifenesin (expectorant)</option>
+            <option value="110">Hydrocortisone (anti-inflammatory cream)</option>
+
+            <option value="100">Ibuprofen (pain reliever, NSAID)</option>
+            <option value="120">Loratadine (antihistamine)</option>
+            <option value="130">Metformin (diabetes)</option>
+            <option value="140">Omeprazole (acid reflux)</option>
+            <option value="150">Paracetamol (pain reliever, fever reducer)</option>
+            <option value="160">Prednisone (anti-inflammatory steroid)</option>
+            <option value="170">Ranitidine (acid reflux)</option>
+            <option value="180">Simvastatin (cholesterol)</option>
+            <option value="190">Tetracycline (antibiotic)</option>
+            <option value="200">Vitamin D (supplement)</option>
+            <option value="210">Warfarin (blood thinner)</option>
+            <option value="220">Zinc (supplement)</option>            
+            <option value="230">Amoxicillin (antibiotic)</option>
+            <option value="240">Clindamycin (antibiotic)</option>
+            <option value="250">Doxycycline (antibiotic)</option>
+            <option value="260">Fluconazole (antifungal)</option>
+            <option value="270">Hydroxychloroquine (antimalarial, autoimmune)</option>
+            <option value="280">Levothyroxine (thyroid hormone)</option>
+            <option value="290">Lisinopril (blood pressure)</option>
+            <option value="300">Losartan (blood pressure)</option>
+            <option value="310">Metoprolol (blood pressure)</option>
+            <option value="320">Nitrofurantoin (antibiotic)</option>
+            <option value="330">Pantoprazole (acid reflux)</option>
+            <option value="340">Sertraline (antidepressant)</option>
+            <option value="350">Tamsulosin (prostate)</option>
+            <option value="360">Tramadol (pain reliever)</option>
+            <option value="370">Valacyclovir (antiviral)</option>
+            <option value="380">Zolpidem (sleep aid)</option>
+           <option value="400">Other Medicines</option>
+           <option value="500">Vitamin Pack - ₹500</option>
+    
+    
+
+        </select>
+
+    <label>Quantity:</label>
+    <input type="number" id="quantity" placeholder="Enter quantity" min="1
+">
+    <button onclick="generatePharmacyBill()">Add to Pharmacy Bill</button>
+    <div class="pharmacy-output" id="pharmacyOutput"></div>
+     
+    <script>
+    // Pharmacy Section Logic
+    let pharmacyTotal = 0;
+    function generatePharmacyBill() {
+      let medicinePrice = parseInt(document.getElementById("medicine").value);
+      let qty = parseInt(document.getElementById("quantity").value) || 1;
+      let cost = medicinePrice * qty;
+
+      pharmacyTotal += cost;
+
+      document.getElementById("pharmacyOutput").innerHTML = 
+        `<strong>Added Cost:</strong> ₹${cost}<br>
+         <strong>Total Pharmacy Bill:</strong> ₹${pharmacyTotal}`;
+    }
+  </script>
+
+
+    </div>
+    <div class="section1">
+        <h1>Do you want to save your prescription ?</h1>
+        <form id="prescriptionForm">
+            <label for="patientName">Patient Name: </label>
+            <input type="text" id="patientName" name="patientName" required>
+
+            <label for="doctorName">Doctor Name:</label>
+            <input type="text" id="doctorName" name="doctorName" required>
+
+            <label for="prescriptionDetails">Prescription Details:</label>
+            <textarea id="prescriptionDetails" name="prescriptionDetails" rows="4" required></textarea>
+
+            <button type="submit">Save Prescription</button>
+        </form>
+        <div id="prescriptionOutput"></div>
+        <script>
+        document.getElementById('prescriptionForm').onsubmit = function(e) {
+            e.preventDefault();
+            const patient = document.getElementById('patientName').value;
+            const doctor = document.getElementById('doctorName').value;
+            const details = document.getElementById('prescriptionDetails').value;
+            document.getElementById('prescriptionOutput').innerHTML =
+                `<strong>Prescription Saved!</strong><br>
+                 <strong>Patient:</strong> ${patient}<br>
+                 <strong>Doctor:</strong> ${doctor}<br>
+                 <strong>Details:</strong> ${details}`;
+            this.reset();
+        };
+        </script>
+
+
+    </div>
+    <div class="section2">
+
+    </div>
+                </section>
+                <hr font-size="20px" color="black">
+                <div class="footer">
+                <p>&copy; 2024 Hospital Management System. All rights reserved.</p>
+                
+
+                </div>
+                             <hr font-size="20px" color="black">
+                           
+
+
+                </body>
+
+            
+            </html>

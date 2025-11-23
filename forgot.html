@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Forgot Password — HMS</title>
+    <style>
+        :root{
+            --bg:#f5f7fb;
+            --card:#ffffff;
+            --accent:#2563eb;
+            --muted:#6b7280;
+            --success:#059669;
+            --danger:#dc2626;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+        html,body{height:100%}
+        body{
+            margin:0;
+            background:linear-gradient(180deg,var(--bg),#eef2ff);
+            align-items:center;
+            justify-content:center;
+            padding:28px;
+            color:#0f172a;
+            font-size:16px;
+        }
+        .container{
+            width:100%;
+            max-width:720px; /* bigger card */
+            background:var(--card);
+            border-radius:14px;
+            box-shadow:0 12px 40px rgba(18,24,40,0.08);
+            padding:28px 32px;
+box-sizing:border-box;
+translate: 40% 35%;            
+        }
+        a.brand{font-weight:800;color:var(--accent);text-decoration:none;font-size:18px}
+        h1{margin:12px 0 8px;font-size:26px;font-weight:700}
+        p.lead{margin:0 0 18px;color:var(--muted);font-size:16px;line-height:1.45}
+        label{display:block;font-size:14px;margin-bottom:8px;color:var(--muted)}
+        .input{
+            display:block;
+            width:100%;
+            padding:12px 14px;
+            border-radius:10px;
+            border:1px solid #e6eef8;
+            background:linear-gradient(180deg,#fff,#fbfdff);
+            font-size:16px;
+            outline:none;
+            box-sizing:border-box;
+        }
+        .input:focus{border-color:var(--accent);box-shadow:0 0 0 6px rgba(37,99,235,0.06)}
+        .actions{display:flex;align-items:center;justify-content:space-between;margin-top:18px;gap:12px}
+        button{
+            background:var(--accent);
+            color:white;
+            border:none;
+            padding:12px 18px;
+            border-radius:10px;
+            font-weight:700;
+            cursor:pointer;
+            font-size:16px;
+            min-width:120px;
+        }
+        button[disabled]{opacity:0.7;cursor:default}
+        .muted-link{color:var(--muted);text-decoration:none;font-size:15px}
+        .notice{margin-top:16px;padding:12px;border-radius:10px;background:#f8fafc;color:var(--muted);font-size:15px}
+        .notice.success{background:#ecfdf5;color:var(--success);border:1px solid rgba(5,150,105,0.08)}
+        .notice.error{background:#fff1f2;color:var(--danger);border:1px solid rgba(220,38,38,0.08)}
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+        footer{margin-top:18px;text-align:center;font-size:14px;color:var(--muted)}
+
+        /* layout adjustments */
+        html,body{height:100%}
+        body{
+            padding:36px;
+        }
+        main.container{
+            display:block;
+        }
+
+        /* responsive: keep it comfortable on small screens */
+        @media (max-width:480px){
+            :root{font-size:15px}
+            .container{max-width:420px;padding:20px}
+            h1{font-size:20px}
+            p.lead{font-size:14px}
+            .input{padding:10px;font-size:15px}
+            button{padding:10px 14px;font-size:15px;min-width:100px}
+            a.brand{font-size:16px}
+        }
+
+        .menubar{
+    width: 1200px;
+    height: 100px;
+    margin-left: 25px;
+
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    text-decoration: none;
+}
+ul li{
+    float: left;
+    width: 170px;
+    height: 40px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    list-style: none;
+    margin-left: 30px;
+}
+ul li a{
+    text-decoration: none;
+    color: black;
+    display: block;
+
+}
+ul li a:hover{
+    border-radius: 2rem;
+    color: red;
+    transition: 0.2s ease-in-out;
+}
+
+ul li .submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 100;
+    margin-top: -30px;
+}
+
+ul li:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    float: none;
+    text-align: center;
+    margin-left: 0;
+    font-size: 18px;
+}
+
+.submenu li a {
+    color: #333;
+    padding-left: 20px;
+}
+
+.submenu li a:hover {
+    color: #1976d2;
+}
+    </style>
+</head>
+<body> <header>
+            <div class="menubar">
+                <ul>
+                    <li><a href="main page.html">Home</a></li>
+                    <li><a href="Appointment.html">Appointment</a></li>
+                                        <li><a href="Reports.html">Reports</a></li>
+
+                   <li><a href="billing.html">Billing</a></li>
+                     <li><a href="pharmacy.html">Pharmacy</a></li>
+                     <li><a href="contact.html">Contact</a></li>
+
+                   <li><a href="#">Login</a>
+                 <ul>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="patient login.html">Patient Login</a></li>
+                            <li><a href="admin login.html">Admin Login</a></li>
+                             <li><a href="doctor login.html">Doctor Login</a></li>
+                            <li><a href="staff login.html">Staff Login</a></li>
+                        </ul>
+                    </div></li>
+
+                </ul>
+            </div>
+           </header>
+             <hr  font-size="20px" color="black">
+    <main class="container" role="main" aria-labelledby="forgot-heading">
+        <a href="/"><span class="brand">HMS</span></a>
+        <h1 id="forgot-heading">Forgot your password?</h1>
+        <p class="lead">Enter the email associated with your account and we'll send a reset link.</p>
+
+        <form id="forgot-form" novalidate>
+            <label for="email">Email address</label>
+            <input id="email" name="email" class="input" type="email" autocomplete="email" inputmode="email" required
+                         placeholder="you@example.com" aria-describedby="email-help" />
+            <p id="email-help" class="sr-only">We'll send a password reset link to this email if an account exists.</p>
+
+            <div class="actions">
+                <a class="muted-link" href="/login">Back to sign in</a>
+                <button id="submit-btn" type="submit">Send</button>
+            </div>
+        </form>
+
+        <div id="message" role="status" aria-live="polite" style="display:none" class="notice"></div>
+
+        <footer>
+            If you don't receive an email, check spam or try again in a few minutes.
+        </footer>
+    </main>
+
+    <script>
+        (function(){
+            const form = document.getElementById('forgot-form');
+            const emailInput = document.getElementById('email');
+            const submitBtn = document.getElementById('submit-btn');
+            const msg = document.getElementById('message');
+
+            function setMessage(text, type){
+                msg.textContent = text;
+                msg.className = 'notice ' + (type === 'success' ? 'success' : type === 'error' ? 'error' : '');
+                msg.style.display = 'block';
+            }
+
+            function clearMessage(){
+                msg.style.display = 'none';
+                msg.textContent = '';
+                msg.className = 'notice';
+            }
+
+            form.addEventListener('submit', async function(e){
+                e.preventDefault();
+                clearMessage();
+
+                if (!emailInput.checkValidity()){
+                    emailInput.reportValidity();
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+
+                try {
+                    const res = await fetch('/api/auth/password-reset', {
+                        method: 'POST',
+                        headers: {'Content-Type':'application/json'},
+                        body: JSON.stringify({email: emailInput.value.trim()})
+                    });
+
+                    if (res.ok) {
+                        setMessage("If an account exists with that email, we'll send password reset instructions.", 'success');
+                    } else if (res.status === 429) {
+                        setMessage('Too many attempts. Please wait and try again.', 'error');
+                    } else {
+                        setMessage("If an account exists with that email, we'll send password reset instructions.", 'success');
+                    }
+                } catch (err) {
+                    setMessage('Network error. Please try again later.', 'error');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send';
+                }
+            });
+
+            emailInput.addEventListener('keydown', function(e){
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    submitBtn.click();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<html>
+
+    
+    <head>
+        <title>hospital</title>
+        <link rel="stylesheet" href="reports.css">
+       
+  
+    </head>
+    
+    <body>
+        <div class="main">
+           <header>
+            <div class="menubar">
+                <ul>
+                    <li><a href="main page.html">Home</a></li>
+                    <li><a href="Appointment.html">Appointment</a></li>
+                                        <li><a href="#">Reports</a></li>
+
+                   <li><a href="billing.html">Billing</a></li>
+                     <li><a href="pharmacy.html">Pharmacy</a></li>
+                     <li><a href="contact.html">Contact</a></li>
+
+                   <li><a href="#">Login</a>
+                 <ul>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="patient login.html">Patient Login</a></li>
+                            <li><a href="admin login.html">Admin Login</a></li>
+                             <li><a href="doctor login.html">Doctor Login</a></li>
+                            <li><a href="staff login.html">Staff Login</a></li>
+                        </ul>
+                    </div></li>
+
+                </ul>
+            </div>
+           </header>
+             <hr  font-size="20px" color="black">
+                            
+
+           <section>
+
+            <div class="product">
+                <h1>Use your camera </h1>
+                <p>Save your reports</p>
+
+             <video id="video" autoplay></video>
+            <canvas id="canvas"></canvas>
+             <button id="start">Start Camera</button>
+             <button id="snap" disabled>Take Snapshot</button>
+             <button id="save" disabled>Save Snapshot</button>
+             <button id="stop" disabled>Stop Camera</button>
+            </div>
+                
+            <div class="pro">
+            <div class="product1">
+              <h1>Saved reports here</h1>
+              <div class="item1">
+                <button1>click here</button1>
+                <h1>Reports saved</h1>
+                
+              </div>
+              <div class="item2">              
+                <button2>click here</button2>
+
+                
+              </div>
+               <div class="item2">
+                 <button3>click here</button3>
+
+                
+              </div>
+              
+                
+            </div>
+            </div>
+           
+            
+            </section>
+            <div class="footer">
+                <p>&copy; 2024 Hospital Management System. All rights reserved.</p>
+            </div>
+
+            
+            
+        </div>
+
+        <script>
+          const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const start = document.getElementById('start');
+    const snap = document.getElementById('snap');
+    const save = document.getElementById('save');
+    const stop = document.getElementById('stop');
+    const context = canvas.getContext('2d');
+    let stream;
+
+    start.addEventListener('click', () => {
+      navigator.mediaDevices.getUserMedia({ video: true }).then(s => {
+          stream = s;
+          video.srcObject = stream;
+          snap.disabled = false;
+          stop.disabled = false;
+          start.disabled = true;
+        }).catch(err => {
+          alert('Camera access denied or not available.');
+          console.error(err);
+        });
+    });
+
+    snap.addEventListener('click', () => {
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      context.drawImage(video, 0, 0);
+      save.disabled = false;
+    });
+
+    save.addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.download = 'snapshot.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    });
+
+    stop.addEventListener('click', () => {
+      if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+        video.srcObject = null;
+        snap.disabled = true;
+        save.disabled = true;
+        stop.disabled = true;
+        start.disabled = false;
+      }
+    });
+  </script>
+        
+    
+    </body>
+
+</html>
+

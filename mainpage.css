@@ -1,0 +1,267 @@
+body{
+    padding: 10px;
+    margin: 0;
+}
+.main{
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+.menubar{
+    width: 1400px;
+    height: 100px;
+    margin-left: 25px;
+    position: sticky;
+    top: 0;
+    display: flex;
+
+
+}
+.menubar a{
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+    transition: 0.2s ease-in-out;
+    position: relative;
+}
+
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    text-decoration: none;
+}
+ul li{
+    float: left;
+    width: 170px;
+    height: 40px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    list-style: none;
+    margin-left: 30px;
+}
+ul li a{
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.menubar li a:hover{
+    border-radius: 2rem;
+    color: red;
+    transition: 0.2s ease-in-out;
+}
+ 
+.title{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(153, 216, 239);
+    cursor: pointer;
+}
+
+.title h1{
+    font-size: 46px;
+    margin-top: 20px;
+}
+.title h2{
+    font-size: 32px;
+    margin-top: -15px;
+}
+.title1{
+font-family: Arial, Helvetica, sans-serif;
+padding-bottom: 30px;
+}
+.title1 h1{
+    font-size: 36px;
+}
+.title1 h3{
+    font-size: 20px;
+    font-weight: 100;
+    margin-left: 10%;
+    margin-top: -15px;
+}
+.service
+{
+        height: 700px;
+        width: 1400px;
+        border: 2px solid rgb(135, 135, 135);
+        margin: 100px;
+        transform: rotate(0deg);
+        transition: 3s;
+        margin-left: 10px;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 1rem;
+    }
+    .service:hover{
+        transform: rotatey(0deg);
+
+        border-radius: 1rem;
+        cursor: pointer;
+    }
+
+.service h1{
+    text-align: center;
+    font-weight: 200;
+    font-size: 30px;
+    color: black}
+.service1{
+   display: flex;
+   gap: 30px;
+}
+.service1 .item1{
+    width: 280px;
+    height: 200px;
+    border: 1px solid rgb(204, 204, 204);
+    margin-left: 10%;
+    border-radius: 1rem;
+    background: lightgreen;
+    transform: rotate(0deg);
+    transition: 5s;
+}
+.service1 .item1:hover{
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: 0.2s ease-in-out;
+   transform: translate3d(0,-20px,0);
+}
+    
+.service1 .item1 h2{
+    text-align: center;
+    font-size: 26px;
+    font-weight: 500;
+    margin-top: 15%;
+}
+.service1 .item1 btn{
+    display: block;
+    width: 180px;
+    height: 30px;
+    margin-left: 90px;
+    border-radius: 1rem;
+    border: none;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+.service1 .item1 btn a{
+    text-decoration: none;
+    color: black;
+}
+
+.service1 .item1 btn:hover{
+text-decoration: none;
+    color: red;
+    transition: 0.2s ease-in-out;
+        text-decoration: underline;
+
+}
+
+
+
+
+.service2{
+   display: flex;
+   gap: 30px;
+   margin-bottom: 30px;
+}
+.service2 .item2{
+    width: 280px;
+    height: 200px;
+    border: 1px solid rgb(204, 204, 204);
+    margin-left: 10%;
+    border-radius: 1rem;
+    margin-top: 6%;
+    background: lightgreen;
+    transition: 5s;
+}
+.service2 .item2:hover{
+     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: 0.2s ease-in-out;
+    transform: translate3d(0, -20px, 0);
+}
+
+.service2 .item2 h2{
+    text-align: center;
+    font-size: 26px;
+    font-weight: 500;
+    margin-top: 15%;
+}
+.service2 .item2 btn{
+    display: block;
+    width: 180px;
+    height: 30px;
+    margin-left: 90px;
+    border-radius: 1rem;
+    border: none;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+.service2 .item2 btn a{
+    text-decoration: none;
+    color: black;
+}
+
+.service2 .item2 btn:hover{
+text-decoration: none;
+    color: red;
+    transition: 0.2s ease-in-out;
+    text-decoration: underline;
+
+}
+
+ul li .submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 100;
+    margin-top: -30px;
+}
+
+ul li:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    float: none;
+    text-align: center;
+    margin-left: 0;
+    font-size: 18px;
+}
+
+.submenu li a {
+    color: #333;
+    padding-left: 20px;
+}
+
+.submenu li a:hover {
+    color: #1976d2;
+}
+
+
+
+
+
+.footer{
+    width: 100%;
+    height: 50px;
+    background: rgb(204, 204, 204);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    margin-top: 30px;
+}
+.footer h3{
+    font-size: 18px;
+    padding-top: 15px;
+}
+ 

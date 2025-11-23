@@ -1,0 +1,114 @@
+<html>
+
+    
+    <head>
+        <title>hospital</title>
+        <link rel="stylesheet" href="reports.css">
+        <style>
+         h2 { color: #2a3f54; }
+    .section { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);margin-top: 30px;border-bottom: 2px solid black;}
+    label { display: block; margin: 5px 0; font-weight: bold; }
+    input, select, button { padding: 8px; margin: 5px 0; width: 100%; border: 1px solid #ccc; border-radius: 5px; }
+    button { background: #2a9d8f; color: white; cursor: pointer; }
+    button:hover { background: #21867a; }
+    .bill-output, .pharmacy-output { margin-top: 10px; padding: 10px; background: #eef; border-radius: 5px; }
+    select{height: 10px;}
+    select[id="serviceType"]{height: 30px;}
+    .contact-section { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-top: 30px; border-bottom: 2px solid black; }
+       </style>
+  
+    </head>
+     
+    <body>
+        <div class="main">
+           <header>
+            <!-------------------menubar---------------->
+            <div class="menubar">
+                <ul>
+                    <li><a href="main page.html">Home</a></li>
+                    <li><a href="Appointment.html">Appointment</a></li>
+                    <li><a href="Reports.html">Reports</a></li>
+                    <li><a href="billing.html">Billing</a></li>
+                    <li><a href="pharmacy.html">Pharmacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Login</a>
+
+                        <!----------------submenu--------------->
+                 <ul>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="patient login.html">Patient Login</a></li>
+                            <li><a href="admin login.html">Admin Login</a></li>
+                             <li><a href="doctor login.html">Doctor Login</a></li>
+                            <li><a href="staff login.html">Staff Login</a></li>
+                        </ul>
+                    </div></li>
+
+                </ul>
+            </div>
+           </header>
+             <hr  font-size="20px" color="black">
+
+            <section>
+                <!---------------- BILLING SECTION -------------------------->
+  <div class="section">
+    <h2> Billing Section</h2>
+    <label>Patient Name:</label>
+    <input type="text" id="patientName" placeholder="Enter patient name">
+
+    <label>Service Type:</label>
+    <select id="serviceType">
+      <option value="0">select option</option>
+      <option value="500">Consultation - 500</option>
+      <option value="1500">Blood Test - 520</option>
+      <option value="1500">urine Test - 320</option>
+      <option value="1500">palsma Test - 1000</option>
+      <option value="1500">Test - 1500</option>
+      <option value="1500">Lab Test - 1500</option>
+      <option value="5000">Surgery - 50000</option>
+      <option value="2000">Room Charges - 2500</option>
+    </select>
+
+    <label>Discount (10%):</label>
+    <input type="number" id="discount" placeholder="Enter discount %">
+
+    <button onclick="generateBill()">Generate Bill</button>
+    <div class="bill-output" id="billOutput"></div>
+  </div>
+  <br>
+
+                <!------------------------  insurance SECTION ------------------------->
+
+   <div class="contact-section">
+        <h2>Check Insurance Validity</h2>
+        <form>
+            <label for="insurance-number"><strong>Insurance Number:</strong></label>
+            <input type="text" id="insurance-number" name="insurance-number" required>
+            <br><br>
+            <label for="validity-date"><strong>Validity Date & Time:</strong></label>
+            <input type="datetime-local" id="validity-date" name="validity-date" required>
+            <br><br>
+            <button type="submit">Check Validity</button>
+        </form>
+    </div>
+
+            </section>
+            <hr font-size="20px" margin-bottom="30px" color="black">
+            <div class="footer">
+                <p>&copy; 2024 Hospital Management System. All rights reserved.</p>
+            </div>
+            </body>
+    <script>
+            // Billing Section Logic
+
+    function generateBill() {
+        let patient = document.getElementById("patientName").value;
+        let service = parseInt(document.getElementById("serviceType").value);
+        let discount = parseInt(document.getElementById("discount").value) || 0
+        let total = service - (service * discount / 100);
+        document.getElementById("billOutput").innerHTML =
+            `<strong>Patient:</strong> ${patient}<br>
+             <strong>Total Bill:</strong> ${total}`;
+    }
+</script>
+        </html>
